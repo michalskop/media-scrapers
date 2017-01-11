@@ -65,7 +65,7 @@ for category in settings.categories:
                     "scraped_date": date.isoformat()
                 }
 
-                ident = 'article_' + article['id']
+                ident = 'article_' + str(article['id'])
                 thread = dutils.get_thread_details(api_code=settings.api_code, ident=ident, forum=settings.forum)
                 try:
                     article['posts'] = thread['posts']
@@ -101,7 +101,7 @@ for category in settings.categories:
                             new_likes.append(like)
                 new_articles.append(article)
                 existing_articles.append(article['id'])
-                print(category, article['title'])
+                print(category, article['title'], len(posts))
             except:
                 nothing = None
 
