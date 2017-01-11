@@ -160,6 +160,11 @@
                 "language": "cs",
                 "fields": [
                     {
+                        "name": "article_id",
+                        "type": "integer",
+                        "description": "Article id"
+                    },
+                    {
                         "name": "post_id",
                         "type": "integer",
                         "description": "Post id"
