@@ -1,0 +1,186 @@
+{
+    "name" : "ihned_articles",
+    "title": "Articles iHned",
+    "description": "Articles and discussions from iHned.cz",
+    "language": "en",
+    "sources": [
+        {
+            "name" :"iHned",
+            "web": "http://ihned.cz"
+        },
+        {
+            "name": "Disqus",
+            "web": "https://disqus.com"
+        }
+    ],
+    "resources": [
+        {
+            "name": "Articles",
+            "path": "articles.csv",
+            "schema": {
+                "language": "cs",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "integer",
+                        "description": "Article id"
+                    },
+                    {
+                        "name": "title",
+                        "type": "string",
+                        "description": "Title of the article"
+                    },
+                    {
+                        "name": "date",
+                        "type": "string",
+                        "format": "YYYY-mm-ddTHH:ii:ssz",
+                        "description": "Published date"
+                    },
+                    {
+                        "name": "summary",
+                        "type": "string",
+                        "description": "Summary of the article"
+                    },
+                    {
+                        "name": "author",
+                        "type": "string",
+                        "description": "Author of the article"
+                    },
+                    {
+                        "name": "link",
+                        "type": "string",
+                        "description": "Link to the article"
+                    },
+                    {
+                        "name": "picture_link",
+                        "type": "string",
+                        "description": "Link to the picture for the article"
+                    },
+                    {
+                        "name": "identifier",
+                        "type": "string",
+                        "description": "Disqus identifier of the article"
+                    },
+                    {
+                        "name": "category",
+                        "type": "string",
+                        "description": "First obtained category of the article"
+                    },
+                    {
+                        "name": "posts",
+                        "type": "integer",
+                        "description": "Number of discussion posts for the article (last number)"
+                    },
+                    {
+                        "name": "scraped_date",
+                        "type": "string",
+                        "format": "YYYY-mm-ddTHH:ii:ssz",
+                        "description": "Scraped date of this information"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Posts",
+            "path": "posts.csv",
+            "description": "Discussion posts",
+            "schema": {
+                "language": "cs",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "integer",
+                        "description": "Post id"
+                    },
+                    {
+                        "name": "article_id",
+                        "type": "integer",
+                        "description": "Article id"
+                    },
+                    {
+                        "name": "date",
+                        "type": "string",
+                        "format": "YYYY-mm-ddTHH:ii:ssz",
+                        "description": "Date of the post"
+                    },
+                    {
+                        "name": "message",
+                        "type": "string",
+                        "description": "Text of the post"
+                    },
+                    {
+                        "name": "likes",
+                        "type": "integer",
+                        "description": "Number of likes"
+                    },
+                    {
+                        "name": "dislikes",
+                        "type": "integer",
+                        "description": "Number of dislikes"
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "integer",
+                        "description": "User id"
+                    },
+                    {
+                        "name": "user_name",
+                        "type": "string",
+                        "description": "User's name"
+                    },
+                    {
+                        "name": "user_username",
+                        "type": "string",
+                        "description": "User's username"
+                    },
+                    {
+                        "name": "user_location",
+                        "type": "string",
+                        "description": "User's location"
+                    },
+                    {
+                        "name": "user_reputation",
+                        "type": "number",
+                        "description": "User's reputation"
+                    },
+                    {
+                        "name": "scraped_date",
+                        "type": "string",
+                        "format": "YYYY-mm-ddTHH:ii:ssz",
+                        "description": "Scraped date of this information"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Likes",
+            "path": "likes.csv",
+            "description": "Likes of posts",
+            "schema": {
+                "language": "cs",
+                "fields": [
+                    {
+                        "name": "post_id",
+                        "type": "integer",
+                        "description": "Post id"
+                    },
+                    {
+                        "name": "poster_id",
+                        "type": "integer",
+                        "description": "Id of the author of the post"
+                    },
+                    {
+                        "name": "liker_id",
+                        "type": "integer",
+                        "description": "Id of the author of the like"
+                    },
+                    {
+                        "name": "like",
+                        "type": "integer",
+                        "description": "Like / dislike"
+                    }
+                ]
+            }
+        }
+    ]
+}
