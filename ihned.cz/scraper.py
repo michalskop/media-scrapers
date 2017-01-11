@@ -92,6 +92,7 @@ for category in settings.categories:
                         likes = dutils.get_post_likes(api_code=settings.api_code, thread_id=thread['id'], post_id=post['id'])
                         for l in likes:
                             like = {
+                                'article_id': article['id']
                                 'post_id': post['id'],
                                 'poster_id': post['user_id'],
                                 'liker_id': l['id'],
