@@ -24,3 +24,10 @@ def extract_author(title):
 # create Disqus identifier from id
 def create_identifier(item_id):
     return "blogy-aktualne-" + str(item_id)
+
+
+# escape html total_groups
+def cleanhtml(raw_html):
+    cleanr = re.compile('<.*?>')
+    cleantext = re.sub(cleanr, '', raw_html)
+    return cleantext

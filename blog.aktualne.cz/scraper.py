@@ -47,7 +47,7 @@ for art in arts:
                 "id": art_id,
                 "title": art['title'],
                 "date": art_date.isoformat(),
-                "summary": art['summary'],
+                "summary": sutils.cleanhtml(art['summary']),
                 "author": sutils.extract_author(art["title"]),
                 "link": art['link'],
                 "picture_link": art['image1'],
