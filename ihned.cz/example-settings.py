@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../')
+sys.path.append('/home/user/project/media-scrapers/')
 path = "ihned.cz/"   # path from the project root
 
 datapackage_path = "http://localhost/michal/project/media-scrapers/ihned.cz/data/"
